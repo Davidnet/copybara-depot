@@ -1,0 +1,14 @@
+destinationUrl = "git@github.com:Davidnet/copybara-depot.git"
+core.workflow(
+    name = "default",
+    origin = git.origin(
+        url = "file:///usr/src/app",
+        ref = "master"
+    ),
+    destination = git.destination(
+        url = destinationUrl,
+        fetch = "master",
+        push = "master",
+    ),
+    authoring = authoring.pass_thru("Copybara <copybara@updata.ca>"),
+)
